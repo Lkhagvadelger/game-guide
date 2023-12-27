@@ -1,0 +1,639 @@
+{
+  "Хувцас хэрэглэл": {
+    "link": "https://www.unegui.mn/huvtsas-hereglel/",
+    "subCategories": [
+      {
+        "name": "Эмэгтэй хувцас",
+        "secondName":"womens-dresses",
+        "link": "https://www.unegui.mn/huvtsas-hereglel/emegtej-huvtsas/"
+      },
+      {
+        "name": "Эрэгтэй хувцас",
+        "secondName":"mens-shirts",
+        "link": "https://www.unegui.mn/huvtsas-hereglel/eregtej-huvtsas/"
+      },
+      {
+        "name": "Гутал, пүүз",
+        "secondName":"mens-shoes",
+        "link": "https://www.unegui.mn/huvtsas-hereglel/gutal-pz/"
+      },
+      {
+        "name": "Малгай, цүнх",
+        "secondName":"womens-bags",
+        "link": "https://www.unegui.mn/huvtsas-hereglel/goyol-malgaj-tsnh/"
+      },
+      {
+        "name": "Гоёл чимэглэл, бугуйн цаг",
+        "secondName":"womens-jewellery",
+        "link": "https://www.unegui.mn/huvtsas-hereglel/goyol-chimegel-bugujn-tsag/"
+      },
+      {
+        "name": "Ажлын хувцас",
+        "secondName":"womens-watches",
+        "link": "https://www.unegui.mn/huvtsas-hereglel/ajliin/"
+      },
+      {
+        "name": "Бусад",
+        "secondName":"mens-watches",
+        "link": "https://www.unegui.mn/huvtsas-hereglel/busad/"
+      }
+    ]
+  },
+  "Үл хөдлөх": {
+    "link": "https://www.unegui.mn/l-hdlh/",
+    "subCategories": [
+      {
+        "name": "Үл хөдлөх зарна",
+        "secondName":"furniture",
+        "link": "https://www.unegui.mn/l-hdlh/l-hdlh-zarna/"
+      },
+      {
+        "name": "Үл хөдлөх түрээслүүлнэ",
+        "secondName":"home-decoration",
+        "link": "https://www.unegui.mn/l-hdlh/l-hdlh-treesllne/"
+      }
+    ]
+  },
+  "Автомашин": {
+    "link": "https://www.unegui.mn/avto-mashin/",
+    "subCategories": [
+      {
+        "name": "Автомашин зарна",
+        "secondName":"automotive",
+        "link": "https://www.unegui.mn/avto-mashin/-avtomashin-zarna/"
+      },
+      {
+        "name": "Ачааны машин, автобус, хүнд механизм",
+        "secondName":"automotive",
+        "link": "https://www.unegui.mn/avto-mashin/achaanyi-mashin-avtobus-hnd-mehanizm/"
+      },
+      {
+        "name": "Авто түрээслүүлнэ",
+        "secondName":"automotive",
+        "link": "https://www.unegui.mn/avto-mashin/avto-treesllne/"
+      },
+      {
+        "name": "Мотоцикл, мопед ",
+        "secondName":"motorcycle",
+        "link": "https://www.unegui.mn/avto-mashin/mototsikl-moped-/"
+      },
+      {
+        "name": "Авто дугуй, обуд",
+        "link": "https://www.unegui.mn/avto-mashin/avto-dugujobud/"
+      },
+      {
+        "name": "Авто сэлбэг, туслах хэрэгслүүд",
+        "secondName":"automotive",
+        "link": "https://www.unegui.mn/avto-mashin/avtoselbegbusad/"
+      }
+    ]
+  },
+  "Ажлын зар": {
+    "link": "https://www.unegui.mn/azhild-avna/",
+    "subCategories": [
+      {
+        "name": "Авто үйлчилгээ, засвар",
+        "link": "https://www.unegui.mn/azhild-avna/avto-jlchilgee-zasvar/"
+      },
+      {
+        "name": "Аялал жуулчлал, зочид буудал",
+        "link": "https://www.unegui.mn/azhild-avna/ayalal/"
+      },
+      {
+        "name": "Банк, санхүү, нябо, нярав",
+        "link": "https://www.unegui.mn/azhild-avna/bank-sanh-nyagtlan/"
+      },
+      {
+        "name": "Барилга, дэд бүтэц",
+        "link": "https://www.unegui.mn/azhild-avna/barilgyin-azhil/"
+      },
+      {
+        "name": "Боловсрол, шинжлэх ухаан",
+        "link": "https://www.unegui.mn/azhild-avna/bolovsrol-shinzhleh-uhaan/"
+      },
+      {
+        "name": "Борлуулалт, худалдаа",
+        "link": "https://www.unegui.mn/azhild-avna/borluulaltmarket/"
+      },
+      {
+        "name": "Гоо сайхан, фитнес, спорт",
+        "link": "https://www.unegui.mn/azhild-avna/goo-sajhan-fitnes-sport/"
+      },
+      {
+        "name": "Гүйцэтгэх удирдлага",
+        "link": "https://www.unegui.mn/azhild-avna/gjtsetgeh-udirdlaga/"
+      },
+      {
+        "name": "Дизайн, урлаг, уран сайхан",
+        "link": "https://www.unegui.mn/azhild-avna/eh-beltgegch-dizajn/"
+      },
+      {
+        "name": "Захиргаа, Хүний нөөц",
+        "link": "https://www.unegui.mn/azhild-avna/zahirgaanyi-azhiltan/"
+      },
+      {
+        "name": "Маркетинг, PR менежмент",
+        "link": "https://www.unegui.mn/azhild-avna/marketing-pr-menezhment/"
+      },
+      {
+        "name": "МТ, харилцаа холбоо",
+        "link": "https://www.unegui.mn/azhild-avna/mt-hariltsaa-holboo/"
+      },
+      {
+        "name": "Менежер, төлөөлөгч",
+        "link": "https://www.unegui.mn/azhild-avna/menezher--bh-/"
+      },
+      {
+        "name": "Pесторан, кафе, паб",
+        "link": "https://www.unegui.mn/azhild-avna/pestorantogooch-zgch/"
+      },
+      {
+        "name": "Сэтгүүлч, редактор (ХМХ)",
+        "link": "https://www.unegui.mn/azhild-avna/setguulch-redaktor/"
+      },
+      {
+        "name": "Тээвэр, гааль, агуулах",
+        "link": "https://www.unegui.mn/azhild-avna/teever-gaal-aguulah/"
+      },
+      {
+        "name": "Туслах ажилчин",
+        "link": "https://www.unegui.mn/azhild-avna/azhilchin-achigch/"
+      },
+      {
+        "name": "Уул уурхай",
+        "link": "https://www.unegui.mn/azhild-avna/uul-uurhaj/"
+      },
+      {
+        "name": "Харуул хамгаалалт",
+        "link": "https://www.unegui.mn/azhild-avna/haruul/"
+      },
+      {
+        "name": "ХАА, Байгаль экологи",
+        "link": "https://www.unegui.mn/azhild-avna/hd-aa-malchin/"
+      },
+      {
+        "name": "Хууль, эрх зүй",
+        "link": "https://www.unegui.mn/azhild-avna/huul-erh-zj/"
+      },
+      {
+        "name": "Эрүүл мэнд, эм зүй",
+        "link": "https://www.unegui.mn/azhild-avna/erl-mend-em-zj/"
+      },
+      {
+        "name": "Үйлдвэрлэл",
+        "link": "https://www.unegui.mn/azhild-avna/jldverlel-ded-btets/"
+      },
+      {
+        "name": "Үйлчилгээ",
+        "link": "https://www.unegui.mn/azhild-avna/asragchjlchlegch/"
+      }
+    ]
+  },
+  "Хүүхдийн бараа": {
+    "link": "https://www.unegui.mn/hhdijn-baraa/",
+    "subCategories": [
+      {
+        "name": "Хүүхдийн хувцас",
+        "link": "https://www.unegui.mn/hhdijn-baraa/hhdijn-huvtsas/"
+      },
+      {
+        "name": "Хүүхдийн гутал",
+        "link": "https://www.unegui.mn/hhdijn-baraa/hhdijn-gutal/"
+      },
+      {
+        "name": "Хүүхдийн тэрэг",
+        "link": "https://www.unegui.mn/hhdijn-baraa/hhdijn-tereg/"
+      },
+      {
+        "name": "Хүүхдийн тавилга",
+        "link": "https://www.unegui.mn/hhdijn-baraa/hhdijn-tavilga/"
+      },
+      {
+        "name": "Хүүхдийн тоглоом",
+        "link": "https://www.unegui.mn/hhdijn-baraa/hhdijn-togloom/"
+      },
+      {
+        "name": "Хүүхдийн машины суудал",
+        "link": "https://www.unegui.mn/hhdijn-baraa/hhdijn-mashinyi-suudal/"
+      },
+      {
+        "name": "Эрүүл мэнд, гоо сайхан, живх",
+        "link": "https://www.unegui.mn/hhdijn-baraa/erl-mend-goo-sajhan/"
+      },
+      {
+        "name": "Хүүхдийн  хоол хүнс",
+        "link": "https://www.unegui.mn/hhdijn-baraa/hhdijn-hool-hns/"
+      },
+      {
+        "name": "Бүүвэйлэгч, хөлд оруулагч",
+        "link": "https://www.unegui.mn/hhdijn-baraa/buuveilegch-huld-oruulagch/"
+      },
+      {
+        "name": "Үүргэвч",
+        "link": "https://www.unegui.mn/hhdijn-baraa/uurgevch/"
+      },
+      {
+        "name": "Ванн, горшок",
+        "link": "https://www.unegui.mn/hhdijn-baraa/vann-gorshok/"
+      },
+      {
+        "name": "Хүүхдийн  бусад бараа",
+        "link": "https://www.unegui.mn/hhdijn-baraa/hhdijn-busad-baraa/"
+      }
+    ]
+  },
+  "Компьютер сэлбэг хэрэгсэл": {
+    "link": "https://www.unegui.mn/kompyuter-busad/",
+    "subCategories": [
+      {
+        "name": "Суурин компьютер",
+        "link": "https://www.unegui.mn/kompyuter-busad/desktop/"
+      },
+      {
+        "name": "Notebook",
+        "link": "https://www.unegui.mn/kompyuter-busad/notebook/"
+      },
+      {
+        "name": "PS, XBox, Nintendo",
+        "link": "https://www.unegui.mn/kompyuter-busad/psxboxnintendo/"
+      },
+      {
+        "name": "Принтер, хувилагч, сканнер",
+        "link": "https://www.unegui.mn/kompyuter-busad/printer-xuvilagch-skanner/"
+      },
+      {
+        "name": "Сэлбэг",
+        "link": "https://www.unegui.mn/kompyuter-busad/selbeg/"
+      },
+      {
+        "name": "iPad, tablet",
+        "link": "https://www.unegui.mn/kompyuter-busad/ipad--tablet/"
+      },
+      {
+        "name": "Принтерийн хор, бичгийн цаас",
+        "link": "https://www.unegui.mn/kompyuter-busad/-printerijn-hor--tsaas/"
+      },
+      {
+        "name": "Чихэвч",
+        "link": "https://www.unegui.mn/kompyuter-busad/chihevch-3-d-shil/"
+      },
+      {
+        "name": "Дагалдах хэрэгсэл",
+        "link": "https://www.unegui.mn/kompyuter-busad/dagaldah/"
+      }
+    ]
+  },
+  "Утас, дугаар": {
+    "link": "https://www.unegui.mn/utas--dugaar/",
+    "subCategories": [
+      {
+        "name": "Гар утас ба утаснууд",
+        "secondName":"smartphones",
+        "link": "https://www.unegui.mn/utas--dugaar/gar-utas-ba-utasnuud/"
+      },
+      {
+        "name": "Гар утасны дугаар",
+        "secondName":"smartphones",
+        "link": "https://www.unegui.mn/utas--dugaar/gar-utasnyi-dugaar/"
+      },
+      {
+        "name": "Гар утасны сэлбэг",
+        "secondName":"smartphones",
+        "link": "https://www.unegui.mn/utas--dugaar/gar-utasnyi-selbeg/"
+      },
+      {
+        "name": "Ухаалаг цаг – Smart watch",
+        "secondName":"smartphones",
+        "link": "https://www.unegui.mn/utas--dugaar/uhaalag-tsag-smart-watch/"
+      },
+      {
+        "name": "Дагалдах хэрэгсэл",
+        "secondName":"smartphones",
+        "link": "https://www.unegui.mn/utas--dugaar/dagaldah-heregsel/"
+      }
+    ]
+  },
+  "Цахилгаан бараа": {
+    "link": "https://www.unegui.mn/electro/",
+    "subCategories": [
+      {
+        "name": "Фото, видео камер",
+        "link": "https://www.unegui.mn/electro/foto--video-kamer/"
+      },
+      {
+        "name": "ТВ, Аudio + Video",
+        "link": "https://www.unegui.mn/electro/tv-audio--video/"
+      },
+      {
+        "name": "Гал тогооны цахилгаан бараа",
+        "link": "https://www.unegui.mn/electro/kitchen-appliances/"
+      },
+      {
+        "name": "Зуух, халаагуур",
+        "link": "https://www.unegui.mn/electro/-zuuh-halaaguur-/"
+      },
+      {
+        "name": "Угаалгын машин",
+        "link": "https://www.unegui.mn/electro/ugaalgyin-mashin/"
+      },
+      {
+        "name": "Тоос сорогч, хивс угаагч, индүү",
+        "link": "https://www.unegui.mn/electro/toos-sorogch-hivs-ugaagch-ind/"
+      },
+      {
+        "name": "Агааржуулагч, сэнс",
+        "link": "https://www.unegui.mn/electro/-agaarzhuulagch-sens/"
+      },
+      {
+        "name": "Оёдлын машин",
+        "link": "https://www.unegui.mn/electro/oyodlyin-mashin/"
+      },
+      {
+        "name": "Хөргөгч, хөлдөөгч",
+        "link": "https://www.unegui.mn/electro/hrggch-hldgch/"
+      },
+      { "name": "Бусад", "link": "https://www.unegui.mn/electro/busad/" }
+    ]
+  },
+  "Гэр ахуйн бараа": {
+    "link": "https://www.unegui.mn/ger-ahujn-baraa/",
+    "subCategories": [
+      {
+        "name": "Абажур, гэрэл, чийдэн",
+        "link": "https://www.unegui.mn/ger-ahujn-baraa/abajur-gerel-chiiden/"
+      },
+      {
+        "name": "Ариун цэврийн өрөөний хэрэглэл",
+        "link": "https://www.unegui.mn/ger-ahujn-baraa/ariun-tsevrijn-rnij-hereglel/"
+      },
+      {
+        "name": "Бөс бараа, торго",
+        "link": "https://www.unegui.mn/ger-ahujn-baraa/bus-baraa-torgo/"
+      },
+      {
+        "name": "Гал тогооны хэрэгсэл, сав суулга",
+        "link": "https://www.unegui.mn/ger-ahujn-baraa/gal-togoonyi-heregsel-sav-suulga/"
+      },
+      {
+        "name": "Гэрийн чимэглэл, тохижилт",
+        "link": "https://www.unegui.mn/ger-ahujn-baraa/geriin-chimeglel-tohijilt/"
+      },
+      {
+        "name": "Монгол гэр",
+        "link": "https://www.unegui.mn/ger-ahujn-baraa/ger/"
+      },
+      {
+        "name": "Тавилга",
+        "link": "https://www.unegui.mn/ger-ahujn-baraa/tavilga/"
+      },
+      {
+        "name": "Хивс, дорож, дэвсгэр",
+        "link": "https://www.unegui.mn/ger-ahujn-baraa/hivs-dorozh-devsger/"
+      },
+      {
+        "name": "Хөшиг, цагаан хэрэглэл, хөнжил, дэр",
+        "link": "https://www.unegui.mn/ger-ahujn-baraa/hshig-tsagaan-hereglel-hnzhil-der/"
+      },
+      {
+        "name": "Угаалга, цэвэрлэгээний хэрэгсэл",
+        "link": "https://www.unegui.mn/ger-ahujn-baraa/ugaalga-tseverlegeenii-heregsel/"
+      }
+    ]
+  },
+  "Төхөөрөмж, материал, түлш": {
+    "link": "https://www.unegui.mn/thrmzh-barilgyin-material-tlsh-thij-ed/",
+    "subCategories": [
+      {
+        "name": "Барилгын материал",
+        "link": "https://www.unegui.mn/thrmzh-barilgyin-material-tlsh-thij-ed/barilgyin-material/"
+      },
+      {
+        "name": "Тоног төхөөрөмж, багаж хэрэгсэл",
+        "link": "https://www.unegui.mn/thrmzh-barilgyin-material-tlsh-thij-ed/tonog-thrmzh--bagazh-heregsel/"
+      },
+      {
+        "name": "Түлээ, нүүрс, түлш",
+        "link": "https://www.unegui.mn/thrmzh-barilgyin-material-tlsh-thij-ed/tlee-nrstlsh/"
+      }
+    ]
+  },
+  "Амралт, спорт, хобби": {
+    "link": "https://www.unegui.mn/hobbi-sport/",
+    "subCategories": [
+      {
+        "name": "Аяллын хэрэгсэл",
+        "link": "https://www.unegui.mn/hobbi-sport/ayallyin-heregsel/"
+      },
+      {
+        "name": "Загас ан агнуур",
+        "link": "https://www.unegui.mn/hobbi-sport/zagas-an-agnuur/"
+      },
+      {
+        "name": "Ном, бичиг хэрэгсэл",
+        "link": "https://www.unegui.mn/hobbi-sport/nom-bichig-heregsel/"
+      },
+      {
+        "name": "Пянз, кассет, CD, DVD",
+        "link": "https://www.unegui.mn/hobbi-sport/pyanzkassetcddvd/"
+      },
+      {
+        "name": "Спортын  хэрэгсэл ",
+        "link": "https://www.unegui.mn/hobbi-sport/sportyin-heregsel-/"
+      },
+      {
+        "name": "Хөгжмийн зэмсэг",
+        "link": "https://www.unegui.mn/hobbi-sport/hgzhmijn-zemseg/"
+      },
+      {
+        "name": "Цуглуулга",
+        "link": "https://www.unegui.mn/hobbi-sport/tsugluulga/"
+      },
+      {
+        "name": "Удирдлагатай тоглоом",
+        "link": "https://www.unegui.mn/hobbi-sport/udirdlagataj-togloom/"
+      },
+      {
+        "name": "Унадаг дугуй, сэлбэг",
+        "link": "https://www.unegui.mn/hobbi-sport/unadag-duguj--selbeg/"
+      },
+      {
+        "name": "Үзвэр, арга хэмжээ",
+        "link": "https://www.unegui.mn/hobbi-sport/uzver-arga/"
+      },
+      {
+        "name": "Эрхийн бичиг, тасалбар",
+        "link": "https://www.unegui.mn/hobbi-sport/erhiin-bichig/"
+      },
+      { "name": "Бусад", "link": "https://www.unegui.mn/hobbi-sport/busad/" }
+    ]
+  },
+  "Эрүүл мэнд, гоо сайхан, хүнс": {
+    "link": "https://www.unegui.mn/eruul-mend-goo-saikhan-huns/",
+    "subCategories": [
+      {
+        "name": "Эрүүл мэнд",
+        "link": "https://www.unegui.mn/eruul-mend-goo-saikhan-huns/-erl-mend/"
+      },
+      {
+        "name": "Гоо сайхан",
+        "link": "https://www.unegui.mn/eruul-mend-goo-saikhan-huns/goo-sajhan/"
+      },
+      {
+        "name": "Хүнс",
+        "link": "https://www.unegui.mn/eruul-mend-goo-saikhan-huns/huns/"
+      }
+    ]
+  },
+  "Мал амьтан, ургамал": {
+    "link": "https://www.unegui.mn/mal-amitan/",
+    "subCategories": [
+      {
+        "name": "Мал амьтан",
+        "link": "https://www.unegui.mn/mal-amitan/mal--amtan/"
+      },
+      {
+        "name": "Түүхий эд, ноос",
+        "link": "https://www.unegui.mn/mal-amitan/thij-edvs-noos/"
+      },
+      {
+        "name": "Ургамал, мод, цэцэг",
+        "link": "https://www.unegui.mn/mal-amitan/urgamalmodtsetseg/"
+      },
+      {
+        "name": "Хөрс, бордоо, ургамал хамгаалал",
+        "link": "https://www.unegui.mn/mal-amitan/shoroo/"
+      },
+      { "name": "Бусад", "link": "https://www.unegui.mn/mal-amitan/busad/" }
+    ]
+  },
+  "Үйлчилгээ": {
+    "link": "https://www.unegui.mn/jlchilgee/",
+    "subCategories": [
+      {
+        "name": "Авто засвар",
+        "link": "https://www.unegui.mn/jlchilgee/avto-zasvar/"
+      },
+      {
+        "name": "Амралт, сувилал",
+        "link": "https://www.unegui.mn/jlchilgee/amralt--cuvilal/"
+      },
+      {
+        "name": "Аялал жуулчлал",
+        "link": "https://www.unegui.mn/jlchilgee/ayalal-zhuulchlal/"
+      },
+      {
+        "name": "Байгаль орчны үнэлгээ, нөхөн сэргээлт",
+        "link": "https://www.unegui.mn/jlchilgee/baigal/"
+      },
+      {
+        "name": "Барилгын бүх ажил",
+        "link": "https://www.unegui.mn/jlchilgee/barilgyin-bh-azhil/"
+      },
+      {
+        "name": "Баярын худалдаа, үйлчилгээ",
+        "link": "https://www.unegui.mn/jlchilgee/bayaryin-hudaldaa-jlchilgee/"
+      },
+      {
+        "name": "Бүх  цэвэрлэгээ",
+        "link": "https://www.unegui.mn/jlchilgee/bh-tseverlegee/"
+      },
+      {
+        "name": "Жолоочийн үйлчилгээ",
+        "link": "https://www.unegui.mn/jlchilgee/Jolooch/"
+      },
+      {
+        "name": "Компани зарна",
+        "link": "https://www.unegui.mn/jlchilgee/kompani-zarna/"
+      },
+      {
+        "name": "Компьютер, интернет",
+        "link": "https://www.unegui.mn/jlchilgee/computer-internet/"
+      },
+      {
+        "name": "Мөнгө санхүү, зээл",
+        "link": "https://www.unegui.mn/jlchilgee/zeel-olgono/"
+      },
+      {
+        "name": "Нүүлгэлт, тээвэр",
+        "link": "https://www.unegui.mn/jlchilgee/-nlgeltteever/"
+      },
+      {
+        "name": "Оёдол, хатгамал...",
+        "link": "https://www.unegui.mn/jlchilgee/oyodol-hatgamal/"
+      },
+      {
+        "name": "Орчуулга, бичих, шивэх",
+        "link": "https://www.unegui.mn/jlchilgee/orchuulgabichihshiveh/"
+      },
+      {
+        "name": "Хоол захиалга",
+        "link": "https://www.unegui.mn/jlchilgee/pitstsahool-zahia-h/"
+      },
+      {
+        "name": "Сургалт, курс",
+        "link": "https://www.unegui.mn/jlchilgee/surgalt--kurs-/"
+      },
+      {
+        "name": "Тавилга, мужаан",
+        "link": "https://www.unegui.mn/jlchilgee/tavilga--muzhaan/"
+      },
+      {
+        "name": "Тайлан, төсөл",
+        "link": "https://www.unegui.mn/jlchilgee/tajlan-tsl/"
+      },
+      {
+        "name": "Түлхүүр, цоож засвар",
+        "link": "https://www.unegui.mn/jlchilgee/tulhuur/"
+      },
+      {
+        "name": "Уран зураг, баримал, сийлбэр",
+        "link": "https://www.unegui.mn/jlchilgee/uran/"
+      },
+      {
+        "name": "Ургамал, мод тарих",
+        "link": "https://www.unegui.mn/jlchilgee/urgamal-mod-tarih/"
+      },
+      {
+        "name": "Уул уурхайн, өрөмдлөгийн үйлчилгээ",
+        "link": "https://www.unegui.mn/jlchilgee/uul-uurhain/"
+      },
+      {
+        "name": "Үсчин , гоо сайхан",
+        "link": "https://www.unegui.mn/jlchilgee/schin--goo-sajhan/"
+      },
+      {
+        "name": "Харуул, хамгаалалт",
+        "link": "https://www.unegui.mn/jlchilgee/haruul-hamgaalalt/"
+      },
+      {
+        "name": "Хөрөнгө зуучлал, үнэлгээ",
+        "link": "https://www.unegui.mn/jlchilgee/zuuchlal/"
+      },
+      {
+        "name": "Хууль, эрх зүйн",
+        "link": "https://www.unegui.mn/jlchilgee/huul-erh-zjn/"
+      },
+      {
+        "name": "Хүүхэд асрах",
+        "link": "https://www.unegui.mn/jlchilgee/hhed-asrah/"
+      },
+      {
+        "name": "Хэвлэл, реклам, медиа",
+        "link": "https://www.unegui.mn/jlchilgee/hevlelreklammedia/"
+      },
+      {
+        "name": "Цахилгаан бараа засвар",
+        "link": "https://www.unegui.mn/jlchilgee/tsahilgaan-baraa-zasvar/"
+      },
+      {
+        "name": "Эмнэлэг, эмчилгээ",
+        "link": "https://www.unegui.mn/jlchilgee/emneleg-emchilgee/"
+      },
+      {
+        "name": "Олсон, гээсэн баримт бичиг",
+        "link": "https://www.unegui.mn/jlchilgee/olson-geesen/"
+      },
+      { "name": "Бусад", "link": "https://www.unegui.mn/jlchilgee/busad/" }
+    ]
+  }
+}

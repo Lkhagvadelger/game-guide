@@ -1,0 +1,294 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model MasterData {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  value       String
+  country     Country  @relation(fields: [countryId], references: [id])
+  zar         Zar[]
+  promos      Promos[]
+  countryId   String
+}
+
+model User {
+  id                  String    @id @default(cuid())
+  email               String    @unique @default("")
+  emailVerified       DateTime?
+  passwordDigest      String    @default("")
+  phoneNumber         String?   @unique @default("")
+  phoneNumberVerified DateTime?
+  role                UserRole  @default(USER)
+  inviteToken         String?   @unique
+  lastLoggedInAt      DateTime?
+  isTokenUsed         DateTime?
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+  invitedBy           String?
+  pin                 String? // verification code
+  pinCreatedAt        DateTime? // verification code created date
+  pinType             String? //email or phone 
+  pinVerifiedAt       DateTime? // verified date
+  profile             Profile?
+  company             Company?
+  promos              Promos[]
+}
+
+model Profile {
+  id          String   @id @default(cuid())
+  userId      String   @unique
+  firstName   String   @default("")
+  lastName    String   @default("")
+  latinName   String   @default("")
+  sex         String?
+  dob         String?
+  height      Int?
+  weight      Int?
+  picture     String?
+  priceMin    Int?
+  priceMax    Int?
+  birthDate   String?
+  notifyEmail Boolean  @default(true)
+  notifyPush  Boolean  @default(true)
+  notifyBadge Boolean  @default(true)
+  historyId   String?  @unique
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Company {
+  id          String   @id @default(cuid())
+  name        String   @default("")
+  description String   @default("")
+  logo        String?
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      String   @unique
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model PaymentPlan {
+  id          String   @id @default(cuid())
+  name        String   @default("")
+  description String   @default("")
+  price       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Session {
+  id        String   @id
+  sid       String   @unique
+  data      String
+  expiresAt DateTime
+}
+
+model SmsRequestAttempt {
+  id          String   @id @default(cuid())
+  phoneNumber String
+  ipAddress   String
+  createdAt   DateTime @default(now())
+}
+
+model FileUpload {
+  id             String    @id @default(cuid())
+  fileGroup      String?
+  fileLink       String    @default("")
+  fileSource     String    @default("")
+  removedAt      DateTime?
+  createdBy      String    @default("")
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  fileCategory   String?
+  fileSourceDate String?
+  fileMIMEType   String
+}
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+model IP2Location {
+  id          String   @id @default(cuid())
+  ipFrom      BigInt
+  ipTo        BigInt
+  countryCode String
+  country     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model FirebaseToken {
+  id        String   @id @default(cuid())
+  token     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AdditionServiceConfig {
+  id        String   @id @default(cuid())
+  name      String
+  data      Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Country {
+  id           String         @id @default(cuid())
+  name         String
+  countryCode  String         @unique
+  languageName String         @unique
+  isActive     Boolean        @default(false)
+  createdAt    DateTime?      @default(now())
+  updatedAt    DateTime?      @updatedAt
+  category     Category[]
+  categoryMain CategoryMain[]
+  promos       Promos[]
+  masterData   MasterData[]
+  Zar          Zar[]
+}
+
+model CategoryMain {
+  id        String     @id @default(cuid())
+  title     String?
+  colorCode String?    @default("")
+  media     Json?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime?  @updatedAt
+  isActive  Boolean?   @default(false)
+  country   Country    @relation(fields: [countryId], references: [id])
+  category  Category[]
+  countryId String
+  promos    Promos[]
+}
+
+model Category {
+  id               String             @id @default(cuid())
+  oldParent        String?
+  oldRealId        String?
+  name             String
+  sortIndex        Int?               @default(99999)
+  isActive         Boolean?           @default(false)
+  media            Json?
+  colorHex         Json?
+  createdAt        DateTime?          @default(now())
+  updatedAt        DateTime?          @updatedAt
+  //[{key:"tagt",label: "Тагт", isRequired: true, dataType: 'Array/String/Number',data: ["1 тагттай", "2 тагттай"]}]
+  filterCategory   Json?              @default("{}")
+  totalCount       Int                @default(0)
+  country          Country            @relation(fields: [countryId], references: [id])
+  categoryMain     CategoryMain       @relation(fields: [categoryMainId], references: [id])
+  countryId        String
+  categoryMainId   String
+  parentCategory   Category?          @relation(name: "parentCategoryId", fields: [parentCategoryId], references: [id])
+  parentCategoryId String?
+  children         Category[]         @relation(name: "parentCategoryId")
+  product          Product[]
+  zar              Zar[]
+  ZarCatProperties ZarCatProperties[]
+}
+
+model Product {
+  id          String    @id @default(cuid())
+  name        String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime? @updatedAt
+  category    Category? @relation(fields: [categoryId], references: [id])
+  categoryId  String?
+  categoryIds String[]
+}
+
+model Zar {
+  id                String             @id @default(cuid())
+  title             String //garchig
+  status            MasterData?        @relation(fields: [statusMasterId], references: [id]) //master data deerhi status-iin id-g haruulna
+  statusMasterId    String? //masterData Relastion id
+  description       String? //userin oruulj baigaa zariin description
+  createdAt         DateTime
+  createdBy         String
+  updatedAt         DateTime           @updatedAt
+  category          Category           @relation(fields: [categoryId], references: [id]) //Cateogry dotroos hamgiin svvld songoson categoryid
+  categoryId        String // categoryID -iin rel id ni
+  categoryIds       String[] //Hamgiin svvliin category songohod tuhain category-iin parent bolon main category id-uudiig end hadgalna
+  categoryFieldData Json               @default("{}") //Hamgiin svvld songoson cateogry dotorhi filter hiih bolomjtoi category-iin talbaruudiin data-g end hadgalna
+  media             Json? //Media deer {img :[],video:[] }
+  location          Json? //Google map deerhi location Long, Lat
+  price             Decimal            @default(0.00) @db.Decimal(18, 2) // yg haragdah price
+  compareAtPrice    Decimal            @default(0.00) @db.Decimal(18, 2) // haritsuulj haruulah price
+  isFlexiblePrice   Boolean? //Vne tohrich zarj bolno
+  verifiedAt        DateTime?
+  verifiedBy        String?
+  country           Country            @relation(fields: [countryId], references: [id])
+  countryId         String
+  images            Images[]
+  promos            Promos[]
+  zarCatProperties  ZarCatProperties[]
+}
+
+model ZarCatProperties {
+  id          String    @id @default(cuid())
+  zarId       String    @default("")
+  zar         Zar       @relation(fields: [zarId], references: [id])
+  catId       String    @default("")
+  category    Category? @relation(fields: [catId], references: [id])
+  fieldKey    String    @unique
+  number      Decimal   @default(0.00) @db.Decimal(18, 2)
+  str         String    @default("")
+  arrayString String[]  @default([])
+}
+
+model ZarViewCount {
+  id        String   @id @default(cuid())
+  zarId     String
+  viewCount Int      @default(0) //Zariig hvmvvs harsan too
+  updatedAt DateTime @updatedAt
+}
+
+model Images {
+  id        String      @id @default(cuid())
+  zar       Zar         @relation(fields: [zarId], references: [id])
+  zarId     String
+  imageUrl  String
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  imageTags ImageTags[]
+}
+
+//imageTags table will contain all the tags that are used in the images and confidance level
+model ImageTags {
+  id         String   @id @default(cuid())
+  tag        String
+  confidance Float
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  imageId    String
+  image      Images   @relation(fields: [imageId], references: [id])
+}
+
+model Promos {
+  id             String       @id @default(cuid())
+  type           MasterData?  @relation(fields: [typeMasterId], references: [id]) //  Home banner -1, Featured post - 2,
+  isActive       Boolean      @default(false)
+  zar            Zar?         @relation(fields: [zarId], references: [id])
+  media          Json?
+  zarId          String?
+  user           User?        @relation(fields: [userId], references: [id])
+  userId         String?
+  categoryMain   CategoryMain @relation(fields: [categoryMainId], references: [id])
+  categoryMainId String
+  country        Country      @relation(fields: [countryId], references: [id])
+  expiredAt      DateTime?    @default(now())
+  countryId      String
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime?    @updatedAt
+  typeMasterId   String
+}
