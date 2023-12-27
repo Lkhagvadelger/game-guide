@@ -24,7 +24,8 @@
     "stripe:dev": "stripe listen --forward-to  http://localhost:3000/api/stripe/webhook",
     "docker:start": "docker-compose up -d",
     "docker:stop": "docker-compose down",
-    "heroku-postbuild": "next build && npm run prisma:migrate:prod"
+    "heroku-postbuild": "next build",
+    "heroku-postbuild-full": "next build && npm run prisma:migrate:prod"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.5.1",
