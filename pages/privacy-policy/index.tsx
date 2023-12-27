@@ -5,7 +5,7 @@ const PrivacyPolicyPage = () => {
     <AppLayout>
       <Box>
         <h1>Privacy Policy</h1>
-        <p>Last updated: December 11, 2023</p>
+        <p>Last updated: December 27, 2023</p>
         <p>
           This Privacy Policy describes Our policies and procedures on the
           collection, use and disclosure of Your information when You use the
@@ -15,14 +15,7 @@ const PrivacyPolicyPage = () => {
         <p>
           We use Your Personal data to provide and improve the Service. By using
           the Service, You agree to the collection and use of information in
-          accordance with this Privacy Policy. This Privacy Policy has been
-          created with the help of the{" "}
-          <a
-            href="https://www.freeprivacypolicy.com/free-privacy-policy-generator/"
-            target="_blank"
-          >
-            Free Privacy Policy Generator
-          </a>
+          accordance with this Privacy Policy.
           .
         </p>
         <h2>Interpretation and Definitions</h2>
@@ -53,20 +46,19 @@ const PrivacyPolicyPage = () => {
           </li>
           <li>
             <p>
-              <strong>Application</strong> refers to НЭГ ЦЭГ, the software
+              <strong>Application</strong> refers to Arvan 3, the software
               program provided by the Company.
             </p>
           </li>
           <li>
             <p>
               <strong>Company</strong> (referred to as either "the Company",
-              "We", "Us" or "Our" in this Agreement) refers to ORISU TECH LLC,
-              Mongolia .
+              "We", "Us" or "Our" in this Agreement) refers to Arvan 3.
             </p>
           </li>
           <li>
             <p>
-              <strong>Country</strong> refers to: Mongolia
+              <strong>Country</strong> refers to: Pakistan
             </p>
           </li>
           <li>
@@ -122,18 +114,7 @@ const PrivacyPolicyPage = () => {
           not limited to:
         </p>
         <ul>
-          <li>
-            <p>Email address</p>
-          </li>
-          <li>
-            <p>First name and last name</p>
-          </li>
-          <li>
-            <p>Phone number</p>
-          </li>
-          <li>
-            <p>Usage Data</p>
-          </li>
+          <li>Usage Data</li>
         </ul>
         <h4>Usage Data</h4>
         <p>Usage Data is collected automatically when using the Service.</p>
@@ -411,7 +392,16 @@ const PrivacyPolicyPage = () => {
           us:
         </p>
         <ul>
-          <li>By email: info@negtseg.mn</li>
+          <li>
+            By visiting this page on our website:{" "}
+            <a
+              href="https://arvan3.shop/contact"
+              rel="external nofollow noopener"
+              target="_blank"
+            >
+              https://arvan3.shop/contact
+            </a>
+          </li>
         </ul>
       </Box>
     </AppLayout>
