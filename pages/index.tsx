@@ -1,19 +1,19 @@
+import { Box } from "@chakra-ui/react";
 import {
-  SEO,
-  Text
-} from "@ui/index";
+  GameGuideAppNavigationKey,
+  GameGuideAppNavigationData,
+  GameGuideAppLayout,
+} from "@ui/components/GameGuideAppLayout";
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 
-const HomePage = () => {
-  const { t } = useTranslation("auth");
-  const route = useRouter();
+const GameGuideAppPage = () => {
+  const { t: to } = useTranslation("common");
+
   return (
-    <>
-      <SEO title={"НЭГЦЭГ"} />
-      <Text>Wanna see something</Text>
-    </>
+    <GameGuideAppLayout selectedNav={"home"}>
+      {GameGuideAppNavigationData["home"].screen}
+    </GameGuideAppLayout>
   );
 };
-
-export default HomePage;
+export default GameGuideAppPage;

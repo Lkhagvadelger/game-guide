@@ -1,14 +1,14 @@
 version: "3.8"
 services:
   postgres:
-    container_name: tseg_postgre_container
+    container_name: game_guide_postgre_container
     image: postgres:latest
     ports:
-      - 5668:5432
+      - 5662:5432
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: tseg_dev
+      POSTGRES_DB: game_guide_dev
       POSTGRES_HOST_AUTH_METHOD: trust
 
 volumes:

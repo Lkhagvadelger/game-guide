@@ -1,5 +1,5 @@
 {
-  "name": "1tseg_backend",
+  "name": "game_guide_backend",
   "version": "0.1.1",
   "private": true,
   "prisma": {
@@ -7,7 +7,7 @@
   },
   "scripts": {
     "postinstall": "husky install",
-    "dev": "next dev -p 3200",
+    "dev": "next dev -p 3400",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "lint": "next lint",

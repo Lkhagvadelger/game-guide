@@ -55,13 +55,13 @@ const variants = {
   },
   default: {
     field: {
-      fontSize: "13px",
+      fontSize: "14px",
       background: "white",
       border: "1px solid",
       borderColor: "gray.200",
       borderRadius: "4px",
       color: "gray.600",
-      h: "34px",
+      h: "40px",
       fontWeight: "400",
       p: 3,
       _focus: {
