@@ -87,44 +87,7 @@ export const GameGuideAppLayout = ({
             onNavChange={onNavChange ? onNavChange : () => {}}
           />
         )}
-        <Modal
-          size={"full"}
-          finalFocusRef={finalRef}
-          blockScrollOnMount={false}
-          isOpen={isOpen}
-          onClose={onClose}
-          motionPreset={"slideInBottom"}
-          closeOnOverlayClick={false}
-        >
-          <ModalOverlay bg="whiteAlpha.900" zIndex="100" />
-          <ModalContent
-            h="calc(100vh-200px)"
-            w="10vw"
-            bg="rgba(255, 255, 255, 0)"
-            borderRadius={"0px"}
-            textAlign={"center"}
-            boxShadow={"none"}
-          >
-            <Box w="full" justifyContent="center" display="flex" mt="auto">
-              <Box mt={"-132px"}>
-                <Box
-                  minW="140px"
-                  color={"orange.50"}
-                  bg={"orange.10"}
-                  borderColor={"orange.50"}
-                  borderRadius="4px"
-                  border={"1px"}
-                  px="4"
-                  py="2"
-                >
-                  <Text fontSize="xs" fontWeight="500" color={"pink.700"}>
-                    {to(`app.loading`)}
-                  </Text>
-                </Box>
-              </Box>
-            </Box>
-          </ModalContent>
-        </Modal>
+ 
       </Box>
     </>
   );

@@ -44,7 +44,7 @@ export default class Document extends NextDocument {
           />
           <meta name="theme-color" content="#111827" />
         </Head>
-        <body style={{ backgroundColor: "#fbfbfb" }}>
+        <body style={{ backgroundColor: "#ffffff" }}>
           <ColorModeScript />
           <Main />
           <NextScript />
