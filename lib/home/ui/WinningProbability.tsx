@@ -1,7 +1,28 @@
-import { Box, Button, Text, Grid, Heading, VStack } from "@ui/index";
-import { shuffle } from "lodash";
+import {
+  Box,
+  Text,
+  HStack,
+  Heading,
+  Input,
+  VStack,
+  Flex,
+  Grid,
+  Button,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  useDisclosure,
+  Icon,
+  toaster,
+} from "@ui/index";
+import { Tile } from "./Tile";
 import React from "react";
-import { SingleHand } from "./SingelHand";
+import { FaThumbsDown, FaThumbsUp } from "react-icons/fa";
+import { shuffle } from "lodash";
 export type GuideDataType = {
   key: string;
   title: string;
@@ -9,7 +30,7 @@ export type GuideDataType = {
   color?: string;
   content: any;
 };
-export const Hand = () => {
+export const WinningProbability = () => {
   // const suits = ["♠", "♥", "♦", "♣"];
   const suitsAndColor = [
     { suit: "♠", color: "black" },
@@ -65,12 +86,16 @@ export const Hand = () => {
                     .slice(index * 13, 13 * (index + 1))
                     .map((card, index) => {
                       return (
-                        <SingleHand
+                        <Box
+                          border="1px"
+                          borderRadius={"8px"}
                           key={index}
                           color={card.color}
-                          rank={card.rank}
-                          suit={card.suit}
-                        />
+                          textAlign={"center"}
+                        >
+                          {card.rank}
+                          {card.suit}
+                        </Box>
                       );
                     })}
                 </Grid>

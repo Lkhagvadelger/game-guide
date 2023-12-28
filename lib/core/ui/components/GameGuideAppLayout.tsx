@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-css-tags */
+import { Distro } from "@lib/home/ui/Distro";
 import { GameGuideHome } from "@lib/home/ui/GameGuideHome";
 import { Hand } from "@lib/home/ui/Hand";
 
@@ -16,11 +17,19 @@ import useTranslation from "next-translate/useTranslation";
 import NextLink from "next/link";
 import { Router, useRouter } from "next/router";
 import React, { ReactNode } from "react";
-import { HiHand, HiHome, HiOutlineHand, HiOutlineHome } from "react-icons/hi";
+import {
+  HiHand,
+  HiHome,
+  HiOutlineHand,
+  HiOutlineHome,
+  HiOutlineTerminal,
+  HiTerminal,
+} from "react-icons/hi";
 
 export enum GameGuideAppNavigationKey {
   home = "home",
   hand = "hand",
+  distro = "distro",
 }
 
 type GameGuideAppNavigationType = {
@@ -51,6 +60,13 @@ export const GameGuideAppNavigationData: GameGuideAppNavigationItemType = {
     activeIcon: <Icon as={HiHand} />,
     text: "hand",
     screen: <Hand />,
+  },
+  distro: {
+    icon: <Icon as={HiOutlineTerminal} />,
+    isActive: true,
+    activeIcon: <Icon as={HiTerminal} />,
+    text: "distro",
+    screen: <Distro />,
   },
 };
 
@@ -87,7 +103,6 @@ export const GameGuideAppLayout = ({
             onNavChange={onNavChange ? onNavChange : () => {}}
           />
         )}
- 
       </Box>
     </>
   );
