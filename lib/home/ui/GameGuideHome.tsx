@@ -18,16 +18,19 @@ import {
   useDisclosure,
   Icon,
   toaster,
+  InputGroup,
+  InputRightElement,
 } from "@ui/index";
 import { Tile } from "./Tile";
 import React from "react";
-import { FaThumbsDown, FaThumbsUp } from "react-icons/fa";
+import { FaCheck, FaCross, FaThumbsDown, FaThumbsUp } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 export type GuideDataType = {
   key: string;
   title: string;
   short: string;
   color?: string;
-  content: any;
+  content: string;
 };
 export const GameGuideHome = () => {
   const guideData: GuideDataType[] = [
@@ -215,6 +218,8 @@ It's essential to establish and agree upon the specific criteria for determining
   const showDislikedToaster = () => {
     toaster.info("Thank you for your feedback");
   };
+  // search in guide data
+  const [search, setSearch] = React.useState("");
   return (
     <Box p={4} w="full" pb={"88px"} bg="#fff" fontFamily={"sans-serif"}>
       <VStack w="full">
@@ -222,14 +227,54 @@ It's essential to establish and agree upon the specific criteria for determining
           Big 2 Game Guide
         </Heading>
         <Box w="full">
-          <Input
-            bg="gray.100"
-            minH="8"
-            fontSize={"18px"}
-            placeholder="Search in guide"
-            fontFamily={"heading"}
-            w="full"
-          />
+          <InputGroup>
+            <Input
+              bg="gray.100"
+              minH="8"
+              fontSize={"18px"}
+              placeholder="Search in guide"
+              fontFamily={"heading"}
+              w="full"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+            <InputRightElement
+              onClick={() => {
+                setSearch("");
+              }}
+            >
+              <Icon as={IoClose} color="green.500" />
+            </InputRightElement>
+          </InputGroup>
+          {search.length > 0 && (
+            <Box ml={-4} w="full" px={4} mr={8} position={"absolute"}>
+              <Box bg="gray.100" px={4} pt={4} boxShadow={"xl"}>
+                <Text pb={4}>Search result:</Text>
+                {guideData
+                  .filter((r) => r.content.indexOf(search) > -1)
+                  .map((item) => (
+                    <Box
+                      pb={4}
+                      key={item.key}
+                      onClick={() => {
+                        setSelectedGuide(item);
+                        onOpen();
+                      }}
+                    >
+                      <Heading>{item.title}</Heading>
+                      <Text
+                        dangerouslySetInnerHTML={{
+                          __html:
+                            item.content.length > 100
+                              ? item.content.substring(0, 100) + "..."
+                              : item.content,
+                        }}
+                      ></Text>
+                    </Box>
+                  ))}
+              </Box>
+            </Box>
+          )}
         </Box>
         <Text py={2}>
           Chinese Poker, also known as Big 2, is a card game typically played
@@ -268,7 +313,7 @@ It's essential to establish and agree upon the specific criteria for determining
             <VStack>
               <Box
                 dangerouslySetInnerHTML={{
-                  __html: selectedGuide?.content,
+                  __html: selectedGuide?.content!,
                 }}
               ></Box>
               <Box my={8}>
