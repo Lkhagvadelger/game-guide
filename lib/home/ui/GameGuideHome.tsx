@@ -27,6 +27,7 @@ import { FaCheck, FaCross, FaThumbsDown, FaThumbsUp } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { guideData } from "./guideData";
 import { StrategyAndTips } from "./StrategyAndTips";
+import { LikeDislike } from "./LikeDislike";
 export type GuideDataType = {
   key: string;
   title: string;
@@ -38,12 +39,7 @@ export const GameGuideHome = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef(null);
   const [selectedGuide, setSelectedGuide] = React.useState<GuideDataType>();
-  const showLikedToaster = () => {
-    toaster.success("Thank you for your feedback");
-  };
-  const showDislikedToaster = () => {
-    toaster.info("Thank you for your feedback");
-  };
+
   // search in guide data
   const [search, setSearch] = React.useState("");
   return (
@@ -157,29 +153,9 @@ export const GameGuideHome = () => {
                       __html: selectedGuide?.content!,
                     }}
                   ></Box>
-                  <Box my={8}>
-                    <Text> Was this helpful?</Text>
-                    <HStack>
-                      <Button
-                        onClick={showLikedToaster}
-                        size="md"
-                        fontSize={"24px"}
-                        bg="green.400"
-                      >
-                        <Icon as={FaThumbsUp} />
-                      </Button>
-                      <Button
-                        onClick={showDislikedToaster}
-                        size="md"
-                        fontSize={"24px"}
-                        bg={"red.400"}
-                      >
-                        <Icon as={FaThumbsDown} />
-                      </Button>
-                    </HStack>
-                  </Box>
                 </>
               )}
+              <LikeDislike />
             </VStack>
           </DrawerBody>
         </DrawerContent>
