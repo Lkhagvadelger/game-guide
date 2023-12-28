@@ -1,4 +1,4 @@
-import { Text, Box, Flex, Heading, HStack, Icon } from "@chakra-ui/react";
+import { Text, Box, Flex, Heading, HStack, Icon, Grid } from "@chakra-ui/react";
 import { GuideDataType } from "./GameGuideHome";
 import { SingleHand } from "./SingelHand";
 import { FaArrowDown } from "react-icons/fa";
@@ -57,7 +57,7 @@ export const StrategyAndTips = () => {
     { rank: "3", suit: "♥", color: "red" },
   ];
   return (
-    <>
+    <Box w="full">
       <Box>
         <Heading>Strategy and Tips</Heading>
         <Text>
@@ -83,16 +83,18 @@ export const StrategyAndTips = () => {
         </Text>
         <Heading py={4}>5 Pair Example</Heading>
         <Flex gap={2}>
-          {exampleHand1.map((card, index) => {
-            return (
-              <SingleHand
-                key={index}
-                color={card.color}
-                rank={card.rank}
-                suit={card.suit}
-              />
-            );
-          })}
+          <Grid w="full" templateColumns="repeat(7, minmax(40px, 1fr))" gap={1}>
+            {exampleHand1.map((card, index) => {
+              return (
+                <SingleHand
+                  key={index}
+                  color={card.color}
+                  rank={card.rank}
+                  suit={card.suit}
+                />
+              );
+            })}
+          </Grid>
         </Flex>
         <Box py={2} w="full" textAlign={"center"}>
           {" "}
@@ -103,6 +105,7 @@ export const StrategyAndTips = () => {
         <Box>
           <Flex gap={2}>
             <Text as={"span"}>Front:</Text>
+
             {exampleHand1
               .filter((r) => ["A", "J"].includes(r.rank))
               .map((card, index) => {
@@ -175,16 +178,18 @@ export const StrategyAndTips = () => {
         </Text>
         <Heading py={4}>4 Pair Example</Heading>
         <Flex gap={2}>
-          {exampleHand2.map((card, index) => {
-            return (
-              <SingleHand
-                key={index}
-                color={card.color}
-                rank={card.rank}
-                suit={card.suit}
-              />
-            );
-          })}
+          <Grid w="full" templateColumns="repeat(7, minmax(40px, 1fr))" gap={1}>
+            {exampleHand2.map((card, index) => {
+              return (
+                <SingleHand
+                  key={index}
+                  color={card.color}
+                  rank={card.rank}
+                  suit={card.suit}
+                />
+              );
+            })}
+          </Grid>
         </Flex>
         <Box py={2} w="full" textAlign={"center"}>
           <Icon as={FaArrowDown} />
@@ -257,6 +262,6 @@ export const StrategyAndTips = () => {
           placing the
         </Text>
       </Flex>
-    </>
+    </Box>
   );
 };
