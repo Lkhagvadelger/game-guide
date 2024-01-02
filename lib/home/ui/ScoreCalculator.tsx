@@ -147,7 +147,7 @@ export const ScoreCalculator = () => {
   const WinnerButton = ({ index }: { index: number }) => {
     return game.players[index].isInGame ? (
       <VStack w="full">
-        {showSumOfPoints(index) >= 30 ? (
+        {showSumOfPoints(index) >= maxPoint ? (
           <></>
         ) : (
           <Button
@@ -253,9 +253,13 @@ export const ScoreCalculator = () => {
                     <Text
                       fontSize={"md"}
                       color={
-                        showSumOfPoints(key) >= 30 ? "red.600" : "gray.900"
+                        showSumOfPoints(key) >= maxPoint
+                          ? "red.600"
+                          : "gray.900"
                       }
-                      fontWeight={showSumOfPoints(key) >= 30 ? "600" : "400"}
+                      fontWeight={
+                        showSumOfPoints(key) >= maxPoint ? "600" : "400"
+                      }
                     >
                       {showSumOfPoints(key)} / {maxPoint}
                     </Text>
@@ -371,11 +375,14 @@ export const ScoreCalculator = () => {
               <Text minWidth={"48px"}>Max point</Text>
               <Input
                 size="xs"
-                type="number"
+                type="text"
                 placeholder="Max point"
                 value={maxPoint}
                 onChange={(e) => {
-                  setMaxPoint(Number(e.target.value));
+                  if (isNumeric(e.target.value)) {
+                    if (Number(e.target.value) > 10000) setMaxPoint(10000);
+                    else setMaxPoint(Number(e.target.value));
+                  } else setMaxPoint(0);
                 }}
               />
               <Button w="full" onClick={startGame}>
