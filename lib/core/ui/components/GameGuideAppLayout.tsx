@@ -2,22 +2,15 @@
 import { Distro } from "@lib/home/ui/Distro";
 import { GameGuideHome } from "@lib/home/ui/GameGuideHome";
 import { Hand } from "@lib/home/ui/Hand";
+import { ScoreCalculator } from "@lib/home/ui/ScoreCalculator";
 
-import {
-  Box,
-  HStack,
-  Icon,
-  Modal,
-  ModalContent,
-  ModalOverlay,
-  Text,
-  useDisclosure,
-} from "@ui/index";
+import { Box, HStack, Icon, useDisclosure } from "@ui/index";
 import useTranslation from "next-translate/useTranslation";
 import NextLink from "next/link";
 import { Router, useRouter } from "next/router";
 import React, { ReactNode } from "react";
 import {
+  HiBell,
   HiHand,
   HiHome,
   HiOutlineHand,
@@ -25,11 +18,12 @@ import {
   HiOutlineTerminal,
   HiTerminal,
 } from "react-icons/hi";
-
+import { MdOutlineScore, MdScore } from "react-icons/md";
 export enum GameGuideAppNavigationKey {
   home = "home",
   hand = "hand",
   distro = "distro",
+  score = "score",
 }
 
 type GameGuideAppNavigationType = {
@@ -53,6 +47,13 @@ export const GameGuideAppNavigationData: GameGuideAppNavigationItemType = {
     activeIcon: <Icon as={HiHome} />,
     text: "home",
     screen: <GameGuideHome />,
+  },
+  score: {
+    icon: <Icon as={MdOutlineScore} />,
+    isActive: true,
+    activeIcon: <Icon as={MdScore} />,
+    text: "score",
+    screen: <ScoreCalculator />,
   },
   hand: {
     icon: <Icon as={HiOutlineHand} />,
@@ -127,7 +128,6 @@ const NavToolbox = ({
       paddingTop={3}
       h="64px"
       w={"full"}
-      gap={3}
       background={bgColor}
       zIndex="101"
     >
@@ -186,7 +186,7 @@ const NavButton = ({
               position: "relative",
               visibility: selectedNav !== myKey ? "visible" : "hidden",
             }}
-            width={32}
+            width={"32px"}
             height={32}
           >
             {nav.icon}
@@ -201,7 +201,7 @@ const NavButton = ({
             position: "relative",
             visibility: selectedNav == myKey ? "visible" : "hidden",
           }}
-          width={32}
+          width={"32px"}
           height={32}
         >
           {nav.activeIcon}
