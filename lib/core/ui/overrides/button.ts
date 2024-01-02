@@ -5,8 +5,23 @@ const baseStyle: SystemStyleObject = {
 };
 
 const sizes: Record<string, SystemStyleObject> = {
+  xs: {
+    px: "8px",
+    py: "12px",
+    fontSize: "10px",
+    borderRadius: "3px",
+  },
+  sm: {
+    px: "8px",
+    py: "16px",
+    fontSize: "11px",
+    borderRadius: "4px",
+  },
   md: {
     px: "24px",
+    py: "18px",
+    fontSize: "14px",
+    borderRadius: "6px",
   },
 };
 
@@ -22,14 +37,11 @@ const variants = {
     borderColor: "red.500",
   },
   default: {
-    fontSize: "12px",
     bg: "purple.600",
     color: "white",
     _hover: {
       bg: "linear(to-r, purple.600, purple.300)",
     },
-    borderRadius: "4px",
-    py: "18px"
   },
   solid: {
     bg: "teal.500",
@@ -51,11 +63,11 @@ const variants = {
     boxShadow: "0px 0px 1px 0px rgba(0, 0, 0, 0.1)",
     bg: "white",
     _disabled: {
-      color: "gray.100"
+      color: "gray.100",
     },
     _hover: {
       bg: "gray.200",
-      color: "gray.800"
+      color: "gray.800",
     },
     size: "sm",
     borderWidth: "1px",
@@ -83,7 +95,7 @@ const variants = {
 };
 
 const defaultProps = {
-  size: "xs",
+  size: "sm",
   variant: "default",
   casing: "capitalize",
 };

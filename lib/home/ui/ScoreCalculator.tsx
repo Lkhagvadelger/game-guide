@@ -1,7 +1,19 @@
 import { useLocalStorage } from "@ui/hooks/useLocalStorage";
-import { Box, HStack, Text, Input, VStack, Button, Heading } from "@ui/index";
+import {
+  Box,
+  HStack,
+  Text,
+  Input,
+  VStack,
+  Button,
+  Heading,
+  ButtonGroup,
+  Icon,
+} from "@ui/index";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { FaMedal, FaMinus, FaPlus, FaTrophy } from "react-icons/fa";
+import { HiMinus, HiPlus } from "react-icons/hi";
 
 export type ScorePlayerType = {
   player: number;
@@ -82,8 +94,121 @@ export const ScoreCalculator = () => {
   const addPlayer = (key: number) => {
     let players = game.players;
     players[key].isInGame = true;
+    players[key].name = "P" + (key + 1);
     setGame({ ...game, players: players });
   };
+  const startGame = () => {
+    setGame({ ...game, isLive: true });
+  };
+
+  const clearAllGameHistory = () => {
+    //keep old player names
+    let players = game.players;
+    players.forEach((player: any) => {
+      player.game = [];
+    });
+
+    //reset the game
+    setGame({ ...game, players: players, isLive: false });
+  };
+  const AddRemoveButton = ({
+    index,
+    isInGame,
+  }: {
+    index: number;
+    isInGame: boolean;
+  }) => {
+    return game.isLive ? (
+      <></>
+    ) : isInGame ? (
+      <Button
+        size={"sm"}
+        w="full"
+        leftIcon={<FaMinus />}
+        onClick={() => {
+          removePlayer(index);
+        }}
+      >
+        Remove
+      </Button>
+    ) : (
+      <Button
+        leftIcon={<FaPlus />}
+        size={"sm"}
+        w="full"
+        onClick={() => {
+          addPlayer(index);
+        }}
+      >
+        Add
+      </Button>
+    );
+  };
+  const WinnerButton = ({ index }: { index: number }) => {
+    return game.players[index].isInGame ? (
+      <VStack w="full">
+        {showSumOfPoints(index) >= 30 ? (
+          <></>
+        ) : (
+          <Button
+            w="full"
+            onClick={() => {
+              setWinner(index);
+            }}
+          >
+            Winner
+          </Button>
+        )}
+      </VStack>
+    ) : (
+      <VStack w="full"></VStack>
+    );
+  };
+  const setWinner = (winnerIndex: number) => {
+    let players = game.players;
+    players[winnerIndex].game.push({
+      gameNumber: players[winnerIndex].game.length + 1,
+      point: 0,
+      isWinnder: true,
+    });
+    players.forEach((player: any, index: number) => {
+      if (index != winnerIndex) {
+        player.game.push({
+          gameNumber: player.game.length + 1,
+          point: 0,
+          isWinnder: false,
+        });
+      }
+    });
+    setGame({ ...game, players: players });
+  };
+  const changePlayerName = (playerIndex: number, name: string) => {
+    let players = game.players;
+    players[playerIndex].name = name;
+    setGame({ ...game, players: players });
+  };
+  const setLoserPoint = (loserIndex: number, gameIndex: number, point: any) => {
+    let players = game.players;
+    if (isNumeric(point.target.value)) {
+      players[loserIndex].game[gameIndex].point = Number(point.target.value);
+    } else players[loserIndex].game[gameIndex].point = 0;
+
+    setGame({ ...game, players: players });
+  };
+  const isNumeric = (str: any) => {
+    return (
+      !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
+      !isNaN(parseInt(str))
+    ); // ...and ensure strings of whitespace fail
+  };
+  const showSumOfPoints = (playerIndex: number) => {
+    let sum = 0;
+    game.players[playerIndex].game.forEach((game: any) => {
+      sum += game.point;
+    });
+    return sum;
+  };
+
   return (
     <VStack
       p={4}
@@ -95,12 +220,19 @@ export const ScoreCalculator = () => {
       gap={2}
     >
       <Heading w="full" py="4" color="gray.800">
-        Score calculation
+        Score board
+        <Text as="span" fontSize={"md"} fontWeight={"400"} color="gray.600">
+          {" "}
+          (2-4 players)
+        </Text>
       </Heading>
-      <Text fontSize={"md"}>
+      <Text fontSize={"sm"} pb={2}>
+        Please change the names(P1, P2) and click on "Start New Game" button
+      </Text>
+      <Text fontSize={"sm"}>
         The last player who left with under {maxPoint} points will be winner.{" "}
       </Text>
-      <HStack w="full">
+      <HStack w="full" h={"32px"}>
         {game &&
           game.players &&
           game.players.map((player: ScorePlayerType, key: number) => {
@@ -112,47 +244,22 @@ export const ScoreCalculator = () => {
                   </VStack>
                 )}
                 <VStack key={key} w="full">
-                  {key == 2 &&
-                    (player.isInGame ? (
-                      <Button
-                        w="full"
-                        onClick={() => {
-                          removePlayer(key);
-                        }}
-                      >
-                        Remove
-                      </Button>
-                    ) : (
-                      <Button
-                        variant={"outline"}
-                        w="full"
-                        onClick={() => {
-                          addPlayer(key);
-                        }}
-                      >
-                        Add
-                      </Button>
-                    ))}
-                  {key == 3 &&
-                    (player.isInGame ? (
-                      <Button
-                        w="full"
-                        onClick={() => {
-                          removePlayer(key);
-                        }}
-                      >
-                        Remove
-                      </Button>
-                    ) : (
-                      <Button
-                        w="full"
-                        onClick={() => {
-                          addPlayer(key);
-                        }}
-                      >
-                        Add
-                      </Button>
-                    ))}
+                  {(key == 2 || key == 3) && player.isInGame && (
+                    <>
+                      <AddRemoveButton index={key} isInGame={player.isInGame} />
+                    </>
+                  )}
+                  {player.isInGame && game.isLive && (
+                    <Text
+                      fontSize={"md"}
+                      color={
+                        showSumOfPoints(key) >= 30 ? "red.600" : "gray.900"
+                      }
+                      fontWeight={showSumOfPoints(key) >= 30 ? "600" : "400"}
+                    >
+                      {showSumOfPoints(key)} / {maxPoint}
+                    </Text>
+                  )}
                 </VStack>
               </>
             );
@@ -166,17 +273,23 @@ export const ScoreCalculator = () => {
               return (
                 <>
                   {key == 0 && (
-                    <VStack w="64px">
+                    <VStack key={"0" + key} w="64px">
                       <Text>#</Text>
                     </VStack>
                   )}
                   <VStack key={key} w="full">
-                    <Input
-                      maxLength={8}
-                      type="text"
-                      defaultValue={player.name}
-                      {...register(player.name as any)}
-                    />
+                    {player.isInGame ? (
+                      <Input
+                        maxLength={8}
+                        type="text"
+                        value={player.name}
+                        onChange={(e) => {
+                          changePlayerName(key, e.target.value);
+                        }}
+                      />
+                    ) : (
+                      <AddRemoveButton index={key} isInGame={player.isInGame} />
+                    )}
                   </VStack>
                 </>
               );
@@ -190,10 +303,49 @@ export const ScoreCalculator = () => {
                 <>
                   {key == 0 && (
                     <VStack w="64px">
-                      <Text></Text>
+                      {player.game.map((game: any, gameIndex: number) => {
+                        return (
+                          <Box h={10}>
+                            <Text fontSize={"12px"}>{gameIndex + 1}</Text>
+                          </Box>
+                        );
+                      })}
                     </VStack>
                   )}
-                  <VStack key={key} w="full"></VStack>
+                  {player.isInGame ? (
+                    <VStack key={key} w="full">
+                      {player.game.map((game: any, gameIndex: number) => {
+                        return (
+                          <Box w="full" h={10} key={gameIndex}>
+                            {game.isWinnder ? (
+                              <Text
+                                key={key}
+                                textAlign={"center"}
+                                fontSize={"24px"}
+                                lineHeight={"48px"}
+                                w="full"
+                                color="yellow.400"
+                              >
+                                <Icon as={FaTrophy} />
+                              </Text>
+                            ) : (
+                              <Input
+                                key={key}
+                                maxLength={8}
+                                type="text"
+                                value={game.point}
+                                onChange={(e) => {
+                                  setLoserPoint(key, gameIndex, e);
+                                }}
+                              />
+                            )}
+                          </Box>
+                        );
+                      })}
+                    </VStack>
+                  ) : (
+                    <Box w="full"></Box>
+                  )}
                 </>
               );
             })}
@@ -201,37 +353,43 @@ export const ScoreCalculator = () => {
         {game && game.isLive && (
           <HStack w="full">
             <VStack w="64px"></VStack>
-            <VStack w="full">
-              <Button w="full"> Winner</Button>
-            </VStack>
-            <VStack w="full">
-              <Button w="full"> Winner</Button>
-            </VStack>
-            <VStack w="full">
-              {game && game.players[2].isInGame && (
-                <Button w="full"> Winner</Button>
-              )}
-            </VStack>
-            <VStack w="full">
-              {game && game.players[3].isInGame && (
-                <Button w="full"> Winner</Button>
-              )}
-            </VStack>
+            <WinnerButton index={0} />
+            <WinnerButton index={1} />
+            <WinnerButton index={2} />
+            <WinnerButton index={3} />
           </HStack>
         )}
         <HStack w="full" py={2}>
-          <Text minWidth={"48px"}>Max point</Text>
-          <Input
-            size="xs"
-            type="number"
-            placeholder="Max point"
-            value={maxPoint}
-            onChange={(e) => {
-              setMaxPoint(Number(e.target.value));
-            }}
-          />
-          <Button w="full"> Start new game</Button>
+          {game && game.isLive ? (
+            <>
+              <Button w="full" size="md" onClick={clearAllGameHistory}>
+                Reset game
+              </Button>
+            </>
+          ) : (
+            <>
+              <Text minWidth={"48px"}>Max point</Text>
+              <Input
+                size="xs"
+                type="number"
+                placeholder="Max point"
+                value={maxPoint}
+                onChange={(e) => {
+                  setMaxPoint(Number(e.target.value));
+                }}
+              />
+              <Button w="full" onClick={startGame}>
+                {" "}
+                Start New Game
+              </Button>
+            </>
+          )}
         </HStack>
+        {game && game.isLive && (
+          <Text fontSize={"xs"}>
+            To add new player your must reset the game
+          </Text>
+        )}
       </VStack>
     </VStack>
   );
